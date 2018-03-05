@@ -5,6 +5,7 @@ import Card, { CardContent, CardMedia } from 'material-ui/Card';
 import Typography from 'material-ui/Typography';
 import hours from '../hours.jpg';
 
+
 const styles = {
   card: {
     maxWidth: 345,

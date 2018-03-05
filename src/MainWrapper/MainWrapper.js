@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PlayfulToolbar from '../PlayfulToolbar/PlayfulToolbar';
 import Footer from '../Footer/Footer';
 import ContentBlock from '../ContentBlock/ContentBlock';
-import dogHeader from '../dogheader.webp';
+import dogHeader from '../dogheader.jpg';
 import FullWidthImage from '../FullWidthImage/FullWidthImage';
 import Hours from '../Hours/Hours';
 import Contact from '../Contact/Contact';
