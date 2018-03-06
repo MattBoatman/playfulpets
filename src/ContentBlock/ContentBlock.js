@@ -22,7 +22,7 @@ const ContentBlock = props => {
       <Typography variant="headline" component="h3">
         {props.header}
       </Typography>
-      <Typography className={classes.body1} component="div">
+      <Typography className={classes.body1}>
         {props.body}
       </Typography>
     </Paper>

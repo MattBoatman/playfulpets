@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const style = {
     wrapper: {
-        height: 300,
+        // height: 300,
         width: '100%',
         position: 'absolute',
     },

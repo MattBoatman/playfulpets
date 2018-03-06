@@ -7,8 +7,8 @@ import googlemaps from '../SocialAccounts/google-maps.png';
 const styles = {
   root: {
     width: '100%',
-    bottom: 0,
-    position: 'absolute',
+    // bottom: 0,
+    // position: 'static',
     display: 'flex',
     justifyContent: 'space-between',
     backgroundColor: '#fff',

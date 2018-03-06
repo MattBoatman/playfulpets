@@ -15,6 +15,7 @@ const styles = theme => ({
     maxWidth: 345,
     margin: 20,
     marginBottom: 50,
+    minHeight: 495,
   },
   media: {
     height: 300,
@@ -61,7 +62,7 @@ const Treats = class extends React.Component {
             <Typography variant="headline" component="h2">
               Treats
             </Typography>
-            <Typography paragraph>
+            <Typography >
               Playful Pets is excited to partner with Three Dog Bakery, located
               right here in Columbus, to sell all-natural, fresh-baked treats
               for dogs! Stop in today to get your Playful Pet some tasty treats.
