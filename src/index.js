@@ -30,7 +30,7 @@ const theme = createMuiTheme({
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
     <Router>
-      <div>
+      <div >
         <PlayfulToolbar />
         <Route exact path="/" component={MainWrapper} />
         <Route path="/services" component={Services} />

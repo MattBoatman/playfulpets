@@ -13,9 +13,8 @@ const styles = {
     justifyContent: 'center',
     position: 'relative',
     flexWrap: 'wrap',
-    // zIndex: 10,
     alignItems: 'flex-start',
-    paddingBottom: 31,
+    marginBottom: 60,
   },
   email: {
     color: 'inherit',

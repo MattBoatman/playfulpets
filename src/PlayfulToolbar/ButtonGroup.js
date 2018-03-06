@@ -13,13 +13,14 @@ const ButtonGroup = props => {
       <Button color="inherit" onClick={props.clickServices}>
         Services
       </Button>
-      <Button color="inherit">Vaccination Policy</Button>
+      <Button color="inherit" onClick={props.clickVaccination}>Vaccination Policy</Button>
     </div>
   );
 };
 
 ButtonGroup.propTypes = {
   clickServices: PropTypes.func.isRequired,
+  clickVaccination: PropTypes.func.isRequired,
 };
 
 export default ButtonGroup;

@@ -9,6 +9,7 @@ import overnightboarding from '../overnightboarding.jpg';
 import athomeboarding from '../athomeboarding.jpg';
 import green from 'material-ui/colors/green';
 import Avatar from 'material-ui/Avatar';
+import downloadForm from '../NewClientForm.doc';
 import {
   daycarePrice,
   overnightBoarding,
@@ -16,13 +17,9 @@ import {
   atHomeBoarding,
   atHomeInstructions,
   treatPricing,
-  groomingPricing
+  groomingPricing,
 } from '../Prices/Prices';
-import List, {
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-} from 'material-ui/List';
+import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import Star from 'material-ui-icons/Star';
 import treatspicture from '../dogtreats.jpg';
 
@@ -31,12 +28,16 @@ const styles = {
     padding: 24,
     textAlign: 'center',
   },
+  downloadBlock : {
+    textAlign: 'center',
+  },
   wrapper: {
     display: 'flex',
     justifyContent: 'center',
     position: 'relative',
     flexWrap: 'wrap',
     alignItems: 'flex-start',
+    marginBottom: 60,
   },
   avatar: {
     backgroundColor: green[500],
@@ -56,6 +57,9 @@ const styles = {
   caption: {
     padding: 4,
   },
+  downloadLink: {
+    fontSize: 14,
+  },
 };
 
 const Services = props => {
@@ -65,6 +69,18 @@ const Services = props => {
       <Typography className={classes.display2} variant="display2">
         Services & Pricing
       </Typography>
+      <Typography className={classes.downloadBlock} variant="caption">
+        We require all new clients to complete the "New Client Form." You can
+        download the form prior to your first visit by simply clicking{' '}
+        <a className={classes.downloadLink} href={downloadForm} download>
+          here
+        </a>
+      </Typography>
+      <Typography className={classes.downloadBlock} variant="caption" paragraph>
+        This information is critical to keeping your Playful Pet safe, happy and
+        healthy while you're at work or out-of-town.
+      </Typography>
+
       <div className={classes.wrapper}>
         <ExpandableCard
           imageSrc={Daycarepicture}
@@ -158,7 +174,9 @@ const Services = props => {
           paragraph1="We offer pet grooming services and our full-service grooming room and wash room is up-and-running."
           complexItem={
             <span>
-              <Typography variant="subheading">We currently offer the following services:</Typography>
+              <Typography variant="subheading">
+                We currently offer the following services:
+              </Typography>
             </span>
           }
         />

@@ -6,14 +6,15 @@ import googlemaps from '../SocialAccounts/google-maps.png';
 
 const styles = {
   root: {
-    width: '100%',
-    bottom: '0',
-    // position: 'absolute',
     display: 'flex',
     justifyContent: 'center',
     backgroundColor: '#2e7d32',
     alignItems: 'center',
-    height: 80,
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    height: 55
   },
   phone: {
     padding: 12,

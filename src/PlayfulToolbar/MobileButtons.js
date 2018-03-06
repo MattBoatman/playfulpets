@@ -5,7 +5,7 @@ import MenuIcon from 'material-ui-icons/Menu';
 import Menu, { MenuItem } from 'material-ui/Menu';
 
 const MobileButtons = props => {
-  const { handleClose, handleMenu, anchorEl } = props;
+  const { handleClose, handleMenu, anchorEl, clickVaccination, clickServices } = props;
   const open = Boolean(anchorEl);
   return (
     <div>
@@ -31,8 +31,8 @@ const MobileButtons = props => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Services</MenuItem>
-        <MenuItem onClick={handleClose}>Vaccination Policy</MenuItem>
+        <MenuItem onClick={clickServices}>Services</MenuItem>
+        <MenuItem onClick={clickVaccination}>Vaccination Policy</MenuItem>
       </Menu>
     </div>
   );
@@ -40,6 +40,8 @@ const MobileButtons = props => {
 
 MobileButtons.propTypes = {
   handleClose: PropTypes.func.isRequired,
+  clickServices: PropTypes.func.isRequired,
+  clickVaccination: PropTypes.func.isRequired,
   handleMenu: PropTypes.func.isRequired,
   anchoEl: PropTypes.object,
 };

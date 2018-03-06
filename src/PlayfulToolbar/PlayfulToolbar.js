@@ -7,7 +7,7 @@ import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import MobileButtons from './MobileButtons';
 import ButtonGroup from './ButtonGroup';
-import Button from 'material-ui/Button';
+import VaccinationPolicy from '../VaccinationPolicy/VaccinationPolicy';
 
 const styles = {
   root: {
@@ -18,14 +18,15 @@ const styles = {
     justifyContent: 'space-between',
   },
   title: {
-    cursor: 'pointer'
-  }
+    cursor: 'pointer',
+  },
 };
 
 const PlayfulToolbar = class extends React.Component {
   state = {
     anchorEl: null,
     width: window.innerWidth,
+    vaccination: false,
   };
 
   componentWillMount() {
@@ -41,6 +42,15 @@ const PlayfulToolbar = class extends React.Component {
   };
   clickTitle = () => {
     this.props.history.push('/');
+  };
+
+  handleVaccinationClickOpen = () => {
+    this.setState({ vaccination: true });
+    this.handleClose();
+  };
+
+  handleVaccinationClose = () => {
+    this.setState({ vaccination: false });
   };
 
   handleWindowSizeChange = () => {
@@ -75,12 +85,21 @@ const PlayfulToolbar = class extends React.Component {
                 handleClose={this.handleClose}
                 handleMenu={this.handleMenu}
                 anchorEl={this.state.anchorEl}
+                clickServices={this.clickServices}
+                clickVaccination={this.handleVaccinationClickOpen}
               />
             ) : (
-              <ButtonGroup clickServices={this.clickServices} />
+              <ButtonGroup
+                clickServices={this.clickServices}
+                clickVaccination={this.handleVaccinationClickOpen}
+              />
             )}
           </Toolbar>
         </AppBar>
+        <VaccinationPolicy
+          open={this.state.vaccination}
+          handleClose={this.handleVaccinationClose}
+        />
       </div>
     );
   }
