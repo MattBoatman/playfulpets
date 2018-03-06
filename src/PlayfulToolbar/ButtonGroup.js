@@ -1,20 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from 'material-ui/Button';
+import PropTypes from 'prop-types';
 
 const style = {
-    buttonGroup: {
-        marginLeft: 'auto'
-    }
-}
-class ButtonGroup extends Component {
-    render() {
-        return (
-            <div style={style.buttonGroup}>
-            <Button color="inherit">Services & Rates</Button>
-            <Button color="inherit">Vaccination Policy</Button>
-          </div>
-        );
-    }
-}
+  buttonGroup: {
+    marginLeft: 'auto',
+  },
+};
+const ButtonGroup = props => {
+  return (
+    <div style={style.buttonGroup}>
+      <Button color="inherit" onClick={props.clickServices}>
+        Services
+      </Button>
+      <Button color="inherit">Vaccination Policy</Button>
+    </div>
+  );
+};
+
+ButtonGroup.propTypes = {
+  clickServices: PropTypes.func.isRequired,
+};
 
 export default ButtonGroup;

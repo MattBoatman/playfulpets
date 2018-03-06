@@ -31,7 +31,7 @@ const MobileButtons = props => {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleClose}>Services & Rates</MenuItem>
+        <MenuItem onClick={handleClose}>Services</MenuItem>
         <MenuItem onClick={handleClose}>Vaccination Policy</MenuItem>
       </Menu>
     </div>

@@ -7,17 +7,17 @@ import googlemaps from '../SocialAccounts/google-maps.png';
 const styles = {
   root: {
     width: '100%',
-    // bottom: 0,
-    // position: 'static',
+    bottom: '0',
+    // position: 'absolute',
     display: 'flex',
-    justifyContent: 'space-between',
-    backgroundColor: '#fff',
+    justifyContent: 'center',
+    backgroundColor: '#2e7d32',
     alignItems: 'center',
-    height: 60,
-    zIndex: 15,
+    height: 80,
   },
   phone: {
     padding: 12,
+    color: '#fff',
   },
   logo: {
     height: 40,

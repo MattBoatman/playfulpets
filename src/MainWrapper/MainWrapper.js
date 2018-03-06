@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-import PlayfulToolbar from '../PlayfulToolbar/PlayfulToolbar';
-import Footer from '../Footer/Footer';
 import ContentBlock from '../ContentBlock/ContentBlock';
 import Button from 'material-ui/Button';
 import dogHeader from '../dogheader.jpg';
 import FullWidthImage from '../FullWidthImage/FullWidthImage';
-import Hours from '../Hours/Hours';
-import Contact from '../Contact/Contact';
 import CardWrapper from '../CardWrapper/CardWrapper';
-import Treats from '../Treats/Treats';
 import contact from '../contact.jpg';
 import hours from '../hours.jpg';
-import Daycare from '../Daycare/Daycare';
-import playfulpets from '../playfulpets.jpg'
 
 const styles = {
   wrapper: {
@@ -20,10 +13,9 @@ const styles = {
     justifyContent: 'center',
     position: 'relative',
     flexWrap: 'wrap',
-    zIndex: 10,
-    height: '100vh',
-    overflow: 'auto',
-    alignItems: 'flex-start'
+    // zIndex: 10,
+    alignItems: 'flex-start',
+    paddingBottom: 31,
   },
   email: {
     color: 'inherit',
@@ -34,7 +26,6 @@ class MainWrapper extends Component {
   render() {
     return (
       <div>
-        <PlayfulToolbar />
         <FullWidthImage imageSrc={dogHeader} />
         <div style={styles.wrapper}>
           <ContentBlock
@@ -46,6 +37,13 @@ class MainWrapper extends Component {
         Street, just one mile west of the Ohio Statehouse."
           />
           <CardWrapper
+            imageSrc={hours}
+            title="Hours"
+            paragraph1="Playful Pets is open from 7 a.m. to 7 p.m. Monday through Friday."
+            paragraph2="Weekends are by appointment for overnight boarding pickup and
+            dropoff only."
+          />
+          <CardWrapper
             imageSrc={contact}
             title="Contact"
             paragraph1="We are located at 13 North Green Street, Columbus, OH 43222."
@@ -54,7 +52,7 @@ class MainWrapper extends Component {
               <Button size="small" color="primary">
                 <a
                   style={styles.email}
-                  href="mailto:someone@example.com?Subject=Hello%20again"
+                  href="mailto:PlayfulPetsColumbus@gmail.com"
                   target="_top"
                 >
                   PlayfulPetsColumbus@gmail.com
@@ -62,16 +60,7 @@ class MainWrapper extends Component {
               </Button>
             }
           />
-          <CardWrapper
-            imageSrc={hours}
-            title="Hours"
-            paragraph1="Playful Pets is open from 7 a.m. to 7 p.m. Monday through Friday."
-            paragraph2="Weekends are by appointment for overnight boarding pickup and
-            dropoff only."
-          />
-          <Treats />
         </div>
-        <Footer />
       </div>
     );
   }

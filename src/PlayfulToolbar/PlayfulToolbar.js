@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
+import { withRouter } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
 import Typography from 'material-ui/Typography';
 import MobileButtons from './MobileButtons';
 import ButtonGroup from './ButtonGroup';
+import Button from 'material-ui/Button';
 
 const styles = {
   root: {
     flexGrow: 1,
-    justifyContent: 'space-between',
   },
   flex: {
     flex: 1,
+    justifyContent: 'space-between',
   },
+  title: {
+    cursor: 'pointer'
+  }
 };
 
 const PlayfulToolbar = class extends React.Component {
@@ -30,6 +35,13 @@ const PlayfulToolbar = class extends React.Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
+
+  clickServices = () => {
+    this.props.history.push('/services');
+  };
+  clickTitle = () => {
+    this.props.history.push('/');
+  };
 
   handleWindowSizeChange = () => {
     this.setState({ width: window.innerWidth });
@@ -49,11 +61,12 @@ const PlayfulToolbar = class extends React.Component {
     return (
       <div className={classes.root}>
         <AppBar position="static" color="primary">
-          <Toolbar>
+          <Toolbar className={classes.flex}>
             <Typography
               variant="title"
               color="inherit"
-              className={classes.flex}
+              className={classes.title}
+              onClick={this.clickTitle}
             >
               Playful Pets
             </Typography>
@@ -64,7 +77,7 @@ const PlayfulToolbar = class extends React.Component {
                 anchorEl={this.state.anchorEl}
               />
             ) : (
-              <ButtonGroup />
+              <ButtonGroup clickServices={this.clickServices} />
             )}
           </Toolbar>
         </AppBar>
@@ -75,6 +88,7 @@ const PlayfulToolbar = class extends React.Component {
 
 PlayfulToolbar.propTypes = {
   classes: PropTypes.object.isRequired,
+  history: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(PlayfulToolbar);
+export default withRouter(withStyles(styles)(PlayfulToolbar));
