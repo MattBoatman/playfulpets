@@ -10,9 +10,6 @@ const StaticContent = () => {
       <div className="pageContent">
         <div className="avatarWrapper">
           <Avatar imageURL={playfulSquare} />
-          {/* <div className="about">
-            <p>Your dogs will love it here!</p>
-          </div> */}
         </div>
       </div>
     </div>

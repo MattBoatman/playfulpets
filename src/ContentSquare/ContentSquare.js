@@ -8,16 +8,16 @@ const ContentSquare = props => {
     <div
       style={{
         backgroundColor: props.backgroundColor,
-        color: props.color,
       }}
       className="contentBlock"
     >
       <Typography
         style={{
           color: props.color,
+          fontWeight: 600
         }}
         variant="headline"
-        component="h3"
+        component="h2"
         paragraph
       >
         {props.title}
