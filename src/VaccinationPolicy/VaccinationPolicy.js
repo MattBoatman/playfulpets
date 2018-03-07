@@ -9,7 +9,7 @@ import Dialog, {
   withMobileDialog,
 } from 'material-ui/Dialog';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import LocalHospital from 'material-ui-icons/LocalHospital'
+import Done from 'material-ui-icons/Done'
 import { vaccines } from '../Prices/Prices';
 
 const VaccinationPolicy = props => {
@@ -34,9 +34,9 @@ const VaccinationPolicy = props => {
               return (
                 <ListItem key={object}>
                   <ListItemIcon>
-                    <LocalHospital />
+                    <Done style={{color: '#004f04'}}/>
                   </ListItemIcon>
-                  <ListItemText secondary={object} />
+                  <ListItemText primary={object} />
                 </ListItem>
               );
             })}
