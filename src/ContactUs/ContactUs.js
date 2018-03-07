@@ -15,6 +15,7 @@ export default class ContactUs extends React.Component {
     email: '',
     subject: '',
     phone: '',
+    error: false,
   };
 
   handleClickOpen = () => {
@@ -22,7 +23,14 @@ export default class ContactUs extends React.Component {
   };
 
   handleClose = () => {
-    this.setState({ open: false });
+    this.setState({
+      open: false,
+      name: '',
+      email: '',
+      subject: '',
+      phone: '',
+      error: false,
+    });
   };
 
   handleTextFieldChange = e => {
@@ -32,8 +40,12 @@ export default class ContactUs extends React.Component {
   };
 
   handleSubmit = () => {
-    console.log(this.state);
-    this.handleClose();
+    if (this.state.email === '') {
+      this.setState({ error: true });
+    } else {
+      //send email
+      this.handleClose();
+    }
   };
 
   render() {
@@ -70,6 +82,8 @@ export default class ContactUs extends React.Component {
               label="Email"
               fullWidth
               name="email"
+              required
+              error={this.state.error}
               value={this.state.email}
               onChange={this.handleTextFieldChange}
             />
