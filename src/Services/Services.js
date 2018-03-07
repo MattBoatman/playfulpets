@@ -10,6 +10,7 @@ import athomeboarding from '../athomeboarding.jpg';
 import green from 'material-ui/colors/green';
 import Avatar from 'material-ui/Avatar';
 import downloadForm from '../NewClientForm.doc';
+import Footer from '../Footer/Footer';
 import {
   daycarePrice,
   overnightBoarding,
@@ -28,7 +29,7 @@ const styles = {
     padding: 12,
     textAlign: 'center',
   },
-  downloadBlock : {
+  downloadBlock: {
     textAlign: 'center',
   },
   wrapper: {
@@ -191,6 +192,7 @@ const Services = props => {
           for dogs! Stop in today to get your Playful Pet some tasty treats."
         />
       </div>
+      <Footer />
     </div>
   );
 };

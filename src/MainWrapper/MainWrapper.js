@@ -5,7 +5,10 @@ import dogHeader from '../dogheader.jpg';
 import FullWidthImage from '../FullWidthImage/FullWidthImage';
 import CardWrapper from '../CardWrapper/CardWrapper';
 import contact from '../contact.jpg';
+import playfulpetscolor from '../playfulpetscolor.jpg';
+import playfulpetswhite from '../playfulpetswhite.jpg';
 import hours from '../hours.jpg';
+import Specials from '../Specials/Specials';
 
 const styles = {
   wrapper: {
@@ -25,7 +28,7 @@ class MainWrapper extends Component {
   render() {
     return (
       <div>
-        <FullWidthImage imageSrc={dogHeader} />
+        <FullWidthImage imageSrc={playfulpetscolor} />
         <div style={styles.wrapper}>
           <ContentBlock
             body="Playful Pets offers doggie daycare, overnight pet boarding, light
@@ -48,17 +51,23 @@ class MainWrapper extends Component {
             paragraph1="We are located at 13 North Green Street, Columbus, OH 43222."
             paragraph2="You can reach us at 614-670-4866"
             cardActions={
+              // <span>
+              // <Button size="small" color="primary">
+              //   <a
+              //     style={styles.email}
+              //     href="mailto:PlayfulPetsColumbus@gmail.com"
+              //     target="_top"
+              //   >
+              //     PlayfulPetsColumbus@gmail.com
+              //   </a>
+              // </Button>
               <Button size="small" color="primary">
-                <a
-                  style={styles.email}
-                  href="mailto:PlayfulPetsColumbus@gmail.com"
-                  target="_top"
-                >
-                  PlayfulPetsColumbus@gmail.com
-                </a>
+              Contact Us
               </Button>
+              // </span>
             }
           />
+          {/* <Specials /> */}
         </div>
       </div>
     );

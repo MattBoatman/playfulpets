@@ -8,11 +8,8 @@ import Dialog, {
   DialogTitle,
   withMobileDialog,
 } from 'material-ui/Dialog';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
-import Done from 'material-ui-icons/Done'
-import { vaccines } from '../Prices/Prices';
 
-const VaccinationPolicy = props => {
+const SpecialInformation = props => {
   return (
     <div>
       <Dialog
@@ -22,25 +19,12 @@ const VaccinationPolicy = props => {
         aria-labelledby="responsive-dialog-title"
       >
         <DialogTitle id="responsive-dialog-title">
-          {'Vaccination Policy'}
+          {'Special Information'}
         </DialogTitle>
         <DialogContent>
           <DialogContentText>
-            On or before your dog’s first visit to Playful Pets, we ask that you
-            provide proof of the following current vaccinations:
+            This has more information about the special
           </DialogContentText>
-          <List>
-            {vaccines.map(object => {
-              return (
-                <ListItem key={object}>
-                  <ListItemIcon>
-                    <Done style={{color: '#004f04'}}/>
-                  </ListItemIcon>
-                  <ListItemText primary={object} />
-                </ListItem>
-              );
-            })}
-          </List>
         </DialogContent>
         <DialogActions>
           <Button onClick={props.handleClose} color="primary" autoFocus>
@@ -52,10 +36,10 @@ const VaccinationPolicy = props => {
   );
 };
 
-VaccinationPolicy.propTypes = {
+SpecialInformation.propTypes = {
   fullScreen: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
 };
 
-export default withMobileDialog()(VaccinationPolicy);
+export default withMobileDialog()(SpecialInformation);

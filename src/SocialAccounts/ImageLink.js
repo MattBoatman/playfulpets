@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 const styles = {
   wrapper: {
     cursor: 'pointer',
-    padding: 8
+    padding: 8,
   },
   image: {
-    maxWidth: '100%',
-    maxHeight: '100%'
+    width: 40,
+    height: 40
   }
 };
 const ImageLink = props => {

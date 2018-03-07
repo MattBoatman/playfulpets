@@ -4,10 +4,10 @@ import { withStyles } from 'material-ui/styles';
 import { withRouter } from 'react-router-dom';
 import AppBar from 'material-ui/AppBar';
 import Toolbar from 'material-ui/Toolbar';
-import Typography from 'material-ui/Typography';
 import MobileButtons from './MobileButtons';
 import ButtonGroup from './ButtonGroup';
 import VaccinationPolicy from '../VaccinationPolicy/VaccinationPolicy';
+import playfulSquare from '../playfulpetssquare.png';
 
 const styles = {
   root: {
@@ -19,6 +19,28 @@ const styles = {
   },
   title: {
     cursor: 'pointer',
+    height: 100,
+    width: 140,
+    border: '2px solid #373737',
+    position: 'absolute',
+    top: 3,
+    zIndex: 10,
+    boxShadow: '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+  },
+  mobileTitle: {
+    cursor: 'pointer',
+    height: 60,
+    width: 84,
+    border: '2px solid #373737',
+    position: 'absolute',
+    top: 3,
+    left: 4,
+    zIndex: 10,
+    boxShadow: '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)',
+  },
+  image: {
+    height: '100%',
+    width: '100%',
   },
 };
 
@@ -73,14 +95,9 @@ const PlayfulToolbar = class extends React.Component {
       <div className={classes.root}>
         <AppBar position="static" color="primary">
           <Toolbar className={classes.flex}>
-            <Typography
-              variant="title"
-              color="inherit"
-              className={classes.title}
-              onClick={this.clickTitle}
-            >
-              Playful Pets
-            </Typography>
+            <span onClick={this.clickTitle} className={isMobile ? classes.mobileTitle : classes.title}>
+              <img className={classes.image} src={playfulSquare} alt="Home" />
+            </span>
             {isMobile ? (
               <MobileButtons
                 handleClose={this.handleClose}

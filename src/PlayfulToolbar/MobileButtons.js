@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 import IconButton from 'material-ui/IconButton';
 import MenuIcon from 'material-ui-icons/Menu';
 import Menu, { MenuItem } from 'material-ui/Menu';
-
+const style = {
+  buttonGroup: {
+    marginLeft: 'auto',
+  },
+};
 const MobileButtons = props => {
   const { handleClose, handleMenu, anchorEl, clickVaccination, clickServices } = props;
   const open = Boolean(anchorEl);
   return (
-    <div>
+    <div style={style.buttonGroup} >
       <IconButton
         aria-owns={open ? 'menu-appbar' : null}
         aria-haspopup="true"

@@ -18,7 +18,7 @@ import PricingTable from '../PricingTable/PricingTable';
 const styles = theme => ({
   card: {
     width: 350,
-    marginBottom: 10,
+    margin: 10,
     minHeight: 602,
     display: 'flex',
     flexDirection: 'column',
