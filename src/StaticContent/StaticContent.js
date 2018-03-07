@@ -1,8 +1,7 @@
 import React from 'react';
 import Avatar from '../Avatar/Avatar';
-import playfulpetscolor from '../playfulpetscolor.jpg';
-import './StaticContent.css';
 import playfulSquare from '../playfulpetssquare.png';
+import './StaticContent.css';
 
 const StaticContent = () => {
   return (
