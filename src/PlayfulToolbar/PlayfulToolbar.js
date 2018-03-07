@@ -38,6 +38,7 @@ const PlayfulToolbar = class extends React.Component {
   }
 
   clickServices = () => {
+    this.handleClose();
     this.props.history.push('/services');
   };
   clickTitle = () => {
