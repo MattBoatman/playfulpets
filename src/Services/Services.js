@@ -25,7 +25,7 @@ import treatspicture from '../dogtreats.jpg';
 
 const styles = {
   display2: {
-    padding: 24,
+    padding: 12,
     textAlign: 'center',
   },
   downloadBlock : {
