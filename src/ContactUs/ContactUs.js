@@ -7,6 +7,7 @@ import Dialog, {
   DialogContentText,
   DialogTitle,
 } from 'material-ui/Dialog';
+import { sendEmail } from '../Email/Email';
 
 export default class ContactUs extends React.Component {
   state = {
@@ -16,6 +17,7 @@ export default class ContactUs extends React.Component {
     subject: '',
     phone: '',
     error: false,
+    emailError: false,
   };
 
   handleClickOpen = () => {
@@ -30,6 +32,7 @@ export default class ContactUs extends React.Component {
       subject: '',
       phone: '',
       error: false,
+      emailError: false,
     });
   };
 
@@ -40,11 +43,21 @@ export default class ContactUs extends React.Component {
   };
 
   handleSubmit = () => {
-    if (this.state.email === '') {
+    if (this.state.email === '' && this.state.phone === '') {
       this.setState({ error: true });
     } else {
-      //send email
-      this.handleClose();
+      return sendEmail(
+        this.state.name,
+        this.state.email,
+        this.state.subject,
+        this.state.phone,
+      ).then(result => {
+        if (result && result.response.error) {
+          this.setState({ emailError: true });
+        } else {
+          this.handleClose();
+        }
+      });
     }
   };
 
@@ -92,6 +105,8 @@ export default class ContactUs extends React.Component {
               label="Phone"
               fullWidth
               name="phone"
+              required
+              error={this.state.error}
               value={this.state.phone}
               onChange={this.handleTextFieldChange}
             />
@@ -104,6 +119,18 @@ export default class ContactUs extends React.Component {
               value={this.state.subject}
               onChange={this.handleTextFieldChange}
             />
+            {this.state.emailError && (
+              <DialogContentText
+                style={{ color: 'red', padding: 20, fontSize: '1.2em' }}
+              >
+                Looks like there was an error sending this email. Try emailing
+                us directly at{' '}
+                <a href="mailto:PlayfulPetsColumbus@gmail.com" target="_top">
+                  PlayfulPetsColumbus@gmail.com
+                </a>{' '}
+                or calling 614-670-4866
+              </DialogContentText>
+            )}
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">

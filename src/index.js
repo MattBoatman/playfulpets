@@ -11,6 +11,9 @@ import PlayfulToolbar from './PlayfulToolbar/PlayfulToolbar';
 import Footer from './Footer/Footer';
 import App from './App'
 
+
+
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -27,6 +30,8 @@ const theme = createMuiTheme({
     },
   },
 });
+
+
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
