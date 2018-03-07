@@ -8,6 +8,7 @@ import Typography from 'material-ui/Typography';
 import MobileButtons from './MobileButtons';
 import ButtonGroup from './ButtonGroup';
 import VaccinationPolicy from '../VaccinationPolicy/VaccinationPolicy';
+import playfulSquare from '../playfulpetssquare.png';
 
 const styles = {
   root: {
@@ -19,6 +20,26 @@ const styles = {
   },
   title: {
     cursor: 'pointer',
+    height: 100,
+    width: 140,
+    border: '2px solid #373737',
+    position: 'absolute',
+    top: 3,
+    zIndex: 10,
+  },
+  mobileTitle: {
+    cursor: 'pointer',
+    height: 60,
+    width: 84,
+    border: '2px solid #373737',
+    position: 'absolute',
+    top: 3,
+    left: 4,
+    zIndex: 10,
+  },
+  image: {
+    height: '100%',
+    width: '100%',
   },
 };
 
@@ -73,14 +94,17 @@ const PlayfulToolbar = class extends React.Component {
       <div className={classes.root}>
         <AppBar position="static" color="primary">
           <Toolbar className={classes.flex}>
-            <Typography
+            {/* <Typography
               variant="title"
               color="inherit"
               className={classes.title}
               onClick={this.clickTitle}
             >
               Playful Pets
-            </Typography>
+            </Typography> */}
+            <span onClick={this.clickTitle} className={isMobile ? classes.mobileTitle : classes.title}>
+              <img className={classes.image} src={playfulSquare} />
+            </span>
             {isMobile ? (
               <MobileButtons
                 handleClose={this.handleClose}

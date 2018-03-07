@@ -9,6 +9,7 @@ import 'typeface-roboto';
 import Services from './Services/Services';
 import PlayfulToolbar from './PlayfulToolbar/PlayfulToolbar';
 import Footer from './Footer/Footer';
+import App from './App'
 
 const theme = createMuiTheme({
   palette: {
@@ -32,9 +33,9 @@ ReactDOM.render(
     <Router>
       <div >
         <PlayfulToolbar />
-        <Route exact path="/" component={MainWrapper} />
+        <Route exact path="/" component={App} />
         <Route path="/services" component={Services} />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   </MuiThemeProvider>,

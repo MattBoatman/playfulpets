@@ -19,7 +19,7 @@ const ContentBlock = props => {
   const { classes } = props;
   return (
     <Paper className={classes.root} elevation={4}>
-      <Typography variant="headline" component="h3">
+      <Typography variant="title" component="h3">
         {props.header}
       </Typography>
       <Typography className={classes.body1}>
