@@ -8,29 +8,10 @@ AWS.config.update({
 });
 const ses = new AWS.SES({ apiVersion: '2010-12-01' });
 
-var params = {
-  Destination: {
-    ToAddresses: ['matthewd.boatman@gmail.com'],
-  },
-  Message: {
-    Body: {
-      Text: {
-        Charset: 'UTF-8',
-        Data: 'Testing sending Emails',
-      },
-    },
-    Subject: {
-      Charset: 'UTF-8',
-      Data: 'Test email',
-    },
-  },
-  Source: 'matthewd.boatman@gmail.com'
-};
-
 export const sendEmail = (name = '', email = '', subject = '', phone = '') => {
   var constructedParams = {
     Destination: {
-      ToAddresses: ['matthewd.boatman@gmail.com'],
+      ToAddresses: ['PlayfulPetsColumbus@gmail.com'],
     },
     Message: {
       Body: {
@@ -44,11 +25,17 @@ export const sendEmail = (name = '', email = '', subject = '', phone = '') => {
         Data: 'Inquiry from website',
       },
     },
-    Source: 'matthewd.boatman@gmail.com' /* required */,
+    Source: 'PlayfulPetsColumbus@gmail.com' /* required */,
   };
-  return Promise.resolve(
-    ses.sendEmail(constructedParams, function(response) {
-      return response;
-    }),
-  );
+
+  const emailPromise = ses.sendEmail(constructedParams).promise();
+
+  return emailPromise
+    .then(function(data) {
+      return true;
+    })
+    .catch(function(err) {
+      console.error(err, err.stack);
+      return false;
+    });
 };

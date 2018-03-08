@@ -8,10 +8,15 @@ import Dialog, {
   DialogTitle,
 } from 'material-ui/Dialog';
 import { sendEmail } from '../Email/Email';
+import Snackbar from 'material-ui/Snackbar';
+import IconButton from 'material-ui/IconButton';
+import CloseIcon from 'material-ui-icons/Close';
 
 export default class ContactUs extends React.Component {
   state = {
     open: false,
+    showSnackBar: false,
+    messageNotification: '',
     name: '',
     email: '',
     subject: '',
@@ -36,6 +41,10 @@ export default class ContactUs extends React.Component {
     });
   };
 
+  dismissSnackBar = () => {
+    this.setState({ showSnackBar: false, messageNotification: '' });
+  };
+
   handleTextFieldChange = e => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -52,9 +61,29 @@ export default class ContactUs extends React.Component {
         this.state.subject,
         this.state.phone,
       ).then(result => {
-        if (result && result.response.error) {
-          this.setState({ emailError: true });
+        if (!result) {
+          this.setState({
+            showSnackBar: true,
+            messageNotification: (
+              <span>
+                Looks like there was an error sending this email. Try emailing
+                us directly at{' '}
+                <a style={{color: '#fff'}} href="mailto:PlayfulPetsColumbus@gmail.com" target="_top">
+                  PlayfulPetsColumbus@gmail.com
+                </a>{' '}
+                or calling 614-670-4866
+              </span>
+            ),
+          });
         } else {
+          this.setState({
+            showSnackBar: true,
+            messageNotification: (
+              <span id="message-id">
+                Email sent! We will contact you shortly.
+              </span>
+            ),
+          });
           this.handleClose();
         }
       });
@@ -78,7 +107,7 @@ export default class ContactUs extends React.Component {
               You can fill out the form below or email us directly and we will
               get back you ASAP{' '}
               <a href="mailto:PlayfulPetsColumbus@gmail.com" target="_top">
-                Email: PlayfulPetsColumbus@gmail.com
+                email: PlayfulPetsColumbus@gmail.com
               </a>
             </DialogContentText>
             <TextField
@@ -119,18 +148,6 @@ export default class ContactUs extends React.Component {
               value={this.state.subject}
               onChange={this.handleTextFieldChange}
             />
-            {this.state.emailError && (
-              <DialogContentText
-                style={{ color: 'red', padding: 20, fontSize: '1.2em' }}
-              >
-                Looks like there was an error sending this email. Try emailing
-                us directly at{' '}
-                <a href="mailto:PlayfulPetsColumbus@gmail.com" target="_top">
-                  PlayfulPetsColumbus@gmail.com
-                </a>{' '}
-                or calling 614-670-4866
-              </DialogContentText>
-            )}
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
@@ -141,6 +158,29 @@ export default class ContactUs extends React.Component {
             </Button>
           </DialogActions>
         </Dialog>
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          open={this.state.showSnackBar}
+          autoHideDuration={6000}
+          onClose={this.dismissSnackBar}
+          SnackbarContentProps={{
+            'aria-describedby': 'message-id',
+          }}
+          message={this.state.messageNotification}
+          action={[
+            <IconButton
+              key="close"
+              aria-label="Close"
+              color="inherit"
+              onClick={this.dismissSnackBar}
+            >
+              <CloseIcon />
+            </IconButton>,
+          ]}
+        />
       </div>
     );
   }
