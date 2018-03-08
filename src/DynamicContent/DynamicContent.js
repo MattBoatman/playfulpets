@@ -4,6 +4,7 @@ import './DynamicContent.css';
 import Typography from 'material-ui/Typography';
 import fblogo from '../SocialAccounts/fblogo.png';
 import googlemaps from '../SocialAccounts/google-maps.png';
+import yelp from '../SocialAccounts/yelp.png';
 import ImageLink from '../SocialAccounts/ImageLink';
 import ContactUs from '../ContactUs/ContactUs';
 
@@ -12,7 +13,7 @@ const styles = {
     height: 40,
     paddingTop: 10,
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   lineHeight: {
     lineHeight: '1.8em',
@@ -68,7 +69,11 @@ class DynamicContent extends Component {
             You can reach us at 614-670-4866
           </Typography>
           <div style={styles.logo}>
-          <ContactUs />
+            <ContactUs />
+            <ImageLink
+              href="https://www.yelp.com/biz/playful-pets-of-columbus-columbus"
+              image={yelp}
+            />
             <ImageLink
               href="https://www.facebook.com/PlayfulPetsColumbus/"
               image={fblogo}
