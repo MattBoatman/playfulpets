@@ -3,6 +3,7 @@ import Typography from 'material-ui/Typography';
 import ImageLink from '../SocialAccounts/ImageLink';
 import fblogo from '../SocialAccounts/fblogo.png';
 import googlemaps from '../SocialAccounts/google-maps.png';
+import yelp from '../SocialAccounts/yelp.png';
 
 const styles = {
   root: {
@@ -14,7 +15,7 @@ const styles = {
     bottom: 0,
     left: 0,
     right: 0,
-    height: 55
+    height: 55,
   },
   phone: {
     padding: 12,
@@ -27,22 +28,26 @@ const styles = {
 
 const Footer = props => {
   return (
-      <div style={styles.root}>
-        <div style={styles.addressBlock}>
-          <Typography style={styles.phone}>614-670-4866</Typography>
-        </div>
-        <div style={styles.logo}>
-          <ImageLink
-            href="https://www.facebook.com/PlayfulPetsColumbus/"
-            image={fblogo}
-          />
-          <ImageLink
-            href="http://maps.google.com/?q=Playful Pets Columbus Ohio"
-            image={googlemaps}
-          />
-        </div>
+    <div style={styles.root}>
+      <div style={styles.addressBlock}>
+        <Typography style={styles.phone}>614-670-4866</Typography>
       </div>
-    );
-}
+      <div style={styles.logo}>
+        <ImageLink
+          href="https://www.yelp.com/biz/playful-pets-of-columbus-columbus"
+          image={yelp}
+        />
+        <ImageLink
+          href="https://www.facebook.com/PlayfulPetsColumbus/"
+          image={fblogo}
+        />
+        <ImageLink
+          href="http://maps.google.com/?q=Playful Pets Columbus Ohio"
+          image={googlemaps}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default Footer;

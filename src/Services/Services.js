@@ -41,19 +41,19 @@ const styles = {
     marginBottom: 60,
   },
   avatar: {
-    backgroundColor: green[500],
+    backgroundColor: green[800],
   },
   avatar1: {
-    backgroundColor: green[700],
+    backgroundColor: green[800],
   },
   avatar2: {
-    backgroundColor: green[900],
+    backgroundColor: green[800],
   },
   avatar3: {
-    backgroundColor: green[200],
+    backgroundColor: green[800],
   },
   avatar4: {
-    backgroundColor: green[300],
+    backgroundColor: green[800],
   },
   caption: {
     padding: 4,
@@ -116,7 +116,7 @@ const Services = props => {
         <ExpandableCard
           imageSrc={overnightboarding}
           tableData={overnightBoarding}
-          avatar={<Avatar className={classes.avatar1}>AH</Avatar>}
+          avatar={<Avatar className={classes.avatar1}>OB</Avatar>}
           avatarTitle="Overnight Boarding"
           avatarSubheader="$30"
           paragraph1="With 6,000 square feet of space, Playful Pets has seven oversized kennels for large-dog or multi-dog boarding. We even have a separate room for medium and smaller dog kennels."
@@ -147,7 +147,7 @@ const Services = props => {
         <ExpandableCard
           imageSrc={athomeboarding}
           tableData={atHomeBoarding}
-          avatar={<Avatar className={classes.avatar3}>ON</Avatar>}
+          avatar={<Avatar className={classes.avatar3}>AB</Avatar>}
           avatarTitle="At Home Boarding"
           avatarSubheader="$50"
           paragraph1="Some dogs simply do not like spending the evening in kennels. That's why Playful Pets is offering an at-home boarding option."
@@ -169,7 +169,7 @@ const Services = props => {
         <ExpandableCard
           imageSrc={grooming}
           tableData={groomingPricing}
-          avatar={<Avatar className={classes.avatar4}>PG</Avatar>}
+          avatar={<Avatar className={classes.avatar4}>G</Avatar>}
           avatarTitle="Pet Grooming"
           avatarSubheader="$10 - $20"
           paragraph1="We offer pet grooming services and our full-service grooming room and wash room is up-and-running."
