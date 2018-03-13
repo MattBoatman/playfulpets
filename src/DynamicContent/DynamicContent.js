@@ -18,6 +18,10 @@ const styles = {
   lineHeight: {
     lineHeight: '1.8em',
   },
+  phone: {
+    textDecoration: 'none',
+    color: '#004D40'
+  },
 };
 
 class DynamicContent extends Component {
@@ -66,7 +70,10 @@ class DynamicContent extends Component {
             We are located at 13 North Green Street, Columbus, OH 43222.
           </Typography>
           <Typography style={{ color: '#004D40', ...styles.lineHeight }}>
-            You can reach us at 614-670-4866
+            You can reach us at{' '}
+            <a style={styles.phone} href="tel:614-670-4866">
+              (614) 670-4866
+            </a>
           </Typography>
           <div style={styles.logo}>
             <ContactUs />

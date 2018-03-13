@@ -2,13 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, } from 'react-router-dom';
 import './index.css';
-import MainWrapper from './MainWrapper/MainWrapper';
 import registerServiceWorker from './registerServiceWorker';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import 'typeface-roboto';
 import Services from './Services/Services';
 import PlayfulToolbar from './PlayfulToolbar/PlayfulToolbar';
-import Footer from './Footer/Footer';
 import App from './App'
 
 
@@ -40,7 +38,6 @@ ReactDOM.render(
         <PlayfulToolbar />
         <Route exact path="/" component={App} />
         <Route path="/services" component={Services} />
-        {/* <Footer /> */}
       </div>
     </Router>
   </MuiThemeProvider>,

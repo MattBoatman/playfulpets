@@ -20,6 +20,7 @@ const styles = {
   phone: {
     padding: 12,
     color: '#fff',
+    textDecoration: 'none'
   },
   logo: {
     height: 40,
@@ -30,7 +31,11 @@ const Footer = props => {
   return (
     <div style={styles.root}>
       <div style={styles.addressBlock}>
-        <Typography style={styles.phone}>614-670-4866</Typography>
+        <Typography>
+          <a style={styles.phone} href="tel:614-670-4866">
+            (614) 670-4866
+          </a>
+        </Typography>
       </div>
       <div style={styles.logo}>
         <ImageLink

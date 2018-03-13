@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import ContentBlock from '../ContentBlock/ContentBlock';
 import Button from 'material-ui/Button';
-import dogHeader from '../dogheader.jpg';
 import FullWidthImage from '../FullWidthImage/FullWidthImage';
 import CardWrapper from '../CardWrapper/CardWrapper';
 import contact from '../contact.jpg';
 import playfulpetscolor from '../playfulpetscolor.jpg';
-import playfulpetswhite from '../playfulpetswhite.jpg';
 import hours from '../hours.jpg';
 import Specials from '../Specials/Specials';
 

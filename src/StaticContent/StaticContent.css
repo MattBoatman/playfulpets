@@ -1,14 +1,9 @@
-.avatarWrapper {
-  /* width: 80%; */
-  /* margin-top: 20; */
-}
 .pageLeft {
   width: 50%;
   display: inline-block;
 }
 .pageContent {
   height: 93vh;
-  border-right: 1px solid #efdcd3;
   overflow: hidden;
   display: flex;
   justify-content: center;

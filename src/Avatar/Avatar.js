@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 const styles = {
   wrapper: {
-    // borderRadius: '50%',
     width: '100%'
   }
 };
